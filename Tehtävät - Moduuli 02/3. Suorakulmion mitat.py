@@ -1,6 +1,6 @@
 width= float(input('Anna leveys: '))
-heigth=float(input('Anna korkeus: '))
+height=float(input('Anna korkeus: '))
 
-print('Suorakulmion piiri: ',2*width+2*heigth)
-print('Suorakulmion pinta-ala: ',width*heigth)
+print('Suorakulmion piiri: ',2*width+2*height)
+print('Suorakulmion pinta-ala: ',width*height)
 
