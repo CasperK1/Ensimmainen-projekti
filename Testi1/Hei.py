@@ -1,1 +1,1 @@
-print('Hefsfsggi')
+print('Hei')
