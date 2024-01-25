@@ -4,7 +4,7 @@ pisteet = int(input('Arvottavien pisteiden määrä: '))
 
 pisteet_sisällä = 0
 
-for _ in range(pisteet):
+for i in range(pisteet):
     x = random.uniform(-1, 1)
     y = random.uniform(-1, 1)
 
