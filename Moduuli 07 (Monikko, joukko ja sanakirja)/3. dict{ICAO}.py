@@ -21,10 +21,10 @@ def lentoasema_kysely():
 
         if x.upper() == 'H':
             haku = input('Syötä ICAO: ')
-            if lentokentät.get(haku.upper()) is None:
-                print('Kenttää ei löytynyt, tarkasta ICAO ja tarvittaessa lisää uusi kenttä')
-            else:
+            if haku.upper() in lentokentät:
                 print(f'Kentän nimi: {lentokentät.get(haku.upper())}')
+            else:
+                print('Kenttää ei löytynyt, tarkasta ICAO ja tarvittaessa lisää uusi kenttä')
 
         elif x.upper() == 'L':
             icao = input('Syötä ICAO: ')
