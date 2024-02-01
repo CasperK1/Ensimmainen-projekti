@@ -13,8 +13,9 @@ def yhteys():
         kursori = yk.cursor()
         return yk, kursori
 
+
 def kentat(maakoodi):
-    tulos= []
+    tulos = []
     yk, kursori = yhteys()
 
     sql = f"SELECT type, COUNT(*) AS type_count FROM airport WHERE airport.iso_country = '{maakoodi}' GROUP BY type"
@@ -24,8 +25,7 @@ def kentat(maakoodi):
 
 
 maakoodi = input('Syötä 2-kirjaiminen maakoodi: ').upper()
-tulos=kentat(maakoodi)
-
+tulos = kentat(maakoodi)
 
 i = 0
 print(f'Maassa {maakoodi} on:\n')
