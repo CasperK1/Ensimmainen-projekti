@@ -18,7 +18,7 @@ def kentat(maakoodi):
     tulos = []
     yk, kursori = yhteys()
 
-    sql = f"SELECT type, COUNT(*) AS type_count FROM airport WHERE airport.iso_country = '{maakoodi}' GROUP BY type"
+    sql = f"SELECT type, COUNT(*) FROM airport WHERE airport.iso_country = '{maakoodi}' GROUP BY type"
     kursori.execute(sql)
     tulos = kursori.fetchall()
     return tulos
