@@ -14,25 +14,34 @@ def yhteys():
         return yk, kursori
 
 
-def etaisyys(icao1, icao2):
+def etaisyys(icao_1, icao_2):
     from geopy import distance
     yk, kursori = yhteys()
 
-    sql = (f"SELECT airport.latitude_deg, airport.longitude_deg "
-           f"FROM airport "
-           f"WHERE airport.ident = '{icao1}'")
-    kursori.execute(sql)
-    etaisyys1 = tuple(kursori.fetchall())
+    kentta_1_kysely = (f"SELECT airport.latitude_deg, airport.longitude_deg "
+                       f"FROM airport "
+                       f"WHERE airport.ident = '{icao_1}'")
+    kursori.execute(kentta_1_kysely)
+    etaisyys_1 = kursori.fetchall()
+    # Tarkastaa löytyykö etaisyys_1 tietokannasta
+    if not etaisyys_1:
+        print(f"Kenttää 1. {icao_1} ei löytynyt.")
+        return
 
-    sql = (f"SELECT airport.latitude_deg, airport.longitude_deg "
-           f"FROM airport "
-           f"WHERE airport.ident = '{icao2}'")
-    kursori.execute(sql)
-    etaisyys2 = tuple(kursori.fetchall())
 
-    print(f'Kentän {icao1} ja {icao2} välinen etäisyys: {distance.distance(etaisyys2, etaisyys1)}')
+    kentta_2_kysely = (f"SELECT airport.latitude_deg, airport.longitude_deg "
+                       f"FROM airport "
+                       f"WHERE airport.ident = '{icao_2}'")
+    kursori.execute(kentta_2_kysely)
+    etaisyys_2 = kursori.fetchall()
+    #Tarkastaa löytyykö etaisyys_2 tietokannasta
+    if not etaisyys_2:
+        print(f"Kenttää 2. {icao_2} ei löytynyt.")
+        return
+
+    print(f'Kentän {icao_1} ja {icao_2} välinen etäisyys: {distance.distance(etaisyys_1, etaisyys_2).km:.2f} km')
 
 
 icao1 = input('Syötä 1. kentän ICAO-koodi: ')
-icao2 = input('Syötä 2. kentän ICAO-koodi: ')
-etaisyys(icao1, icao2)
+icao_2 = input('Syötä 2. kentän ICAO-koodi: ')
+etaisyys(icao1.upper(), icao_2.upper())

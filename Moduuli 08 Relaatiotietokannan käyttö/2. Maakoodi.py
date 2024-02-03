@@ -39,12 +39,13 @@ kenttatyypit = {
 maakoodi = input('Syötä 2-kirjaiminen maakoodi: ').upper()
 tulos = kentat(maakoodi)
 
-print(f'Maassa {maakoodi} on:\n')
-for kentta, tulos in tulos:
-    if kentta in kenttatyypit:
-        print(f'{kenttatyypit[kentta]}: {tulos} kpl')
-
-
+if not tulos:
+    print(f'Maakoodia {maakoodi} ei ole olemassa')
+else:
+    print(f'Maassa {maakoodi} on:\n')
+    for kentta, tulos in tulos:
+        if kentta in kenttatyypit:
+            print(f'{kenttatyypit[kentta]}: {tulos} kpl')
 
 
 
