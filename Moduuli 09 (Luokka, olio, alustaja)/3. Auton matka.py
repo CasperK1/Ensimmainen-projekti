@@ -14,18 +14,11 @@ class Auto:
             self.hetkellinen_nopeus = 0
             return
 
+    def kulje(self, tunnit):
+        self.matka += tunnit * self.hetkellinen_nopeus
 
+# Auton parametri 'matka' arvo on kilometreissä
+auto_1 = Auto('ABC-123', 142, 50, 0)
 
-auto_1 = Auto('ABC-123', 142)
-print(f'Auton rekisterinumero: {auto_1.reknro}')
-print(f'Huippunopeus: {auto_1.huippunopeus} km/h')
-print(f'Auton nopeus: {auto_1.hetkellinen_nopeus} km/h')
-print(f'Kuljettu matka: {auto_1.matka} km\n')
-
-print('Kiihdytys...')
-auto_1.nopeus(30)
-auto_1.nopeus(70)
-auto_1.nopeus(50)
-print(f'Auton nopeus {auto_1.hetkellinen_nopeus} km/h\n')
-auto_1.nopeus(-200)
-print(f'Hätäjarrutus! Auton nopeus {auto_1.hetkellinen_nopeus} km/h')
+auto_1.kulje(1)
+print(auto_1.matka)
