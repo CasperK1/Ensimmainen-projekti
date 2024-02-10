@@ -29,7 +29,7 @@ def lentoasema_kysely():
         elif x.upper() == 'L':
             icao = input('Syötä ICAO: ')
             kenttä = input('Syötä kenttä: ')
-            lentokentät[icao] = kenttä.capitalize()
+            lentokentät[icao.upper()] = kenttä.capitalize()
             print(f'Uusi kenttä lisätty {icao}: {kenttä}')
 
         elif x.upper() == 'Q':
