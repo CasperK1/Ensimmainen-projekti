@@ -12,10 +12,9 @@ class Auto:
         self.hetkellinen_nopeus += kiihdytä
         if self.hetkellinen_nopeus > self.huippunopeus:
             self.hetkellinen_nopeus = self.huippunopeus
-            return
+
         if self.hetkellinen_nopeus < 0:
             self.hetkellinen_nopeus = 0
-            return
 
     def kulje(self, tunnit):
         self.matka += tunnit * self.hetkellinen_nopeus

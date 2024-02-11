@@ -9,11 +9,9 @@ class Auto:
         self.hetkellinen_nopeus += kiihdytä
         if self.hetkellinen_nopeus > self.huippunopeus:
             self.hetkellinen_nopeus = self.huippunopeus
-            return
+
         if self.hetkellinen_nopeus < 0:
             self.hetkellinen_nopeus = 0
-            return
-
 
 
 auto_1 = Auto('ABC-123', 142)
