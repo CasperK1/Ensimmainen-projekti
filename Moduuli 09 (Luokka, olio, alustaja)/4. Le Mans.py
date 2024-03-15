@@ -16,8 +16,8 @@ class Auto:
         if self.hetkellinen_nopeus < 0:
             self.hetkellinen_nopeus = 0
 
-    def kulje(self, tunnit):
-        self.matka += tunnit * self.hetkellinen_nopeus
+    def kulje(self):
+        self.matka += self.hetkellinen_nopeus
 
 
 def autojen_luonti():
@@ -33,7 +33,7 @@ while True:
     for auto in kisaajat:
         kiihdytys = random.randint(-10, 15)
         auto.nopeus(kiihdytys)
-        auto.kulje(1)
+        auto.kulje() # 1 'tunti'
 
         if auto.matka >= 13626:  # Kilometriä
             break
