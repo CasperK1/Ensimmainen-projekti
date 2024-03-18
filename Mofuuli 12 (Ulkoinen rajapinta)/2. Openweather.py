@@ -1,7 +1,5 @@
 import requests
 
-
-
 while True:
     xy = input('\nPaikkakunta: ')
     req = requests.get(f'https://api.openweathermap.org/data/2.5/'
@@ -18,5 +16,3 @@ while True:
             print(f'Hakua ei löytynyt\n')
         else:
             print('Error')
-
-
