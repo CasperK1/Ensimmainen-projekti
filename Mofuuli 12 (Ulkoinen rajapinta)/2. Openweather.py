@@ -10,6 +10,7 @@ while True:
         if v == 1:
             print(f'\nSää {req['name']}:')
             print(f'{req['main']['temp']} C°, {req['weather'][0]['main']}')
+            break
 
     except (KeyError, requests.exceptions.RequestException) as e:
         if req['cod'] == '404':
