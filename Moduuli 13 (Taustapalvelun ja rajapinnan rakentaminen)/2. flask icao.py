@@ -28,8 +28,8 @@ def icao(icao):
     kursori.execute(sql)
     query = kursori.fetchall()
     if not query:
-        vastaus = {'icao': icao, 'message': 'not found'}
-        return vastaus
+        tulos = {'icao': icao, 'message': 'not found'}
+        return tulos
     else:
         tulos = {'ICAO': icao, 'Name': query[0][0], 'Municipality': query[0][1]}
         return tulos
